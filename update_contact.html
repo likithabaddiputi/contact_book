@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<style>
+			body {
+				text-align : center;
+				background-color : black;
+				color : white;
+			}
+			form {
+				text-align : center;
+				margin-top : 200px;
+				padding : 50px;
+				font-size : 20px;
+			}
+			input{
+				padding : 8px;															
+			}
+			a {
+				text-decoration : none;
+				color : gray;
+			}
+				
+			
+			</style>
+		
+			<title>
+				Update Contact
+			</title>
+		</head> 
+		
+		<body>
+			<form method = 'POST' action = '/update-contact/{{name}}'>
+				<label>Name: </label>
+				<input type = "text" name = "name" value = "{{ name }}" required> <br><br>
+				 
+				<label>Phone: </label>
+				<input type = "phone" name = "phone" value = "{{ phone }}" required><br><br>
+				
+				<input type = "submit" value = "Save"><br><br>
+				<a href = '/'> ← Back to contacts </a>
+
+
+		</body>
+		
+	</html>

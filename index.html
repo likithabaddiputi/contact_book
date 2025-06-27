@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<style>
+			body{
+				background-color : black;
+				color : white;
+			}
+			.button {
+				color : white;
+				font-size : 28px;
+				
+			}
+			a{
+				text-decoration : none;
+			}
+			span {
+				padding-left : 1200px;
+				font-size : 20px;
+				padding-top : 50px;
+			}
+			tr:nth-child(odd) {
+				background-color : #444;
+			}
+			tr:nth-child(even) {
+				background-color : #666;
+			}
+			table {
+				width : 100%;
+				text-align : center;
+				
+			}
+			th,td {
+				padding: 4px;
+				font-size : 20px;
+			}
+			th {
+				font-size : 20px;
+			}
+			
+			
+			
+		</style>
+		
+		<title>
+			Contact Book
+		</title>
+		</head>
+		<body>
+		<center><h1>Contacts</h1></center>
+		<span><a href = '/add-contact' class = "button"> ➕ &nbsp&nbsp</a>
+		
+			  <a href = '/search' class = "button"> 🔍 </a></span><br><br>
+
+		<table>
+		<tr>
+			
+		{% if contacts %}
+			{% for name, phone in contacts.items() %}
+				<tr>
+					<td>{{name}}</td>
+					<td>{{phone}}</td>
+					<td width = 2%><a href = '/update-contact/{{ name }}'> ✏️ </a></td>
+					<td width = 2%><a href="/delete-contact/{{ name }}" onclick="return confirm('Are you sure you want to delete {{ name }}?');"> 🗑️ </a></td>
+
+				</tr>
+			
+			{% endfor %}
+		
+		</table>
+		{% else %}
+			<h3>No contacts</h3>
+		{% endif %}
+					
+		
+		</body>
+	</html>

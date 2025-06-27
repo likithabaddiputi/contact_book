@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<style>
+			body {
+				text-align : center;
+				background-color : black;
+				color : white;
+			}
+			form {
+				text-align : center;
+				margin-top : 200px;
+				padding : 50px;
+				font-size : 20px;
+			}
+			input{
+				padding : 8px;															
+			}
+			a {
+				text-decoration : none;
+				color : gray;
+			}
+				
+			
+			</style>
+		
+			<title>
+				Search Contact
+			</title>
+		</head> 
+		
+		<body>
+			<form method = 'POST' action = '/search'>
+				<input type = 'text' placeholder ="search" name = 'query' required> 
+				<input type = 'submit' value ='🔍'>
+			</form>
+			<a href = '/'> ← Back to contacts </a>
+			
+			{% if results %}
+			<h3>Results for "{{ query }}"</h3>
+			{% for name, phone in results.items() %}
+			<p><h2>{{ name }} : {{ phone }}</h2></p>
+			{% endfor %}
+			{% elif results is not none %}
+			<h3>No contacts found</h3>
+			{% endif %}
+
+
+		</body>
+		
+	</html>
