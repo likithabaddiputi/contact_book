@@ -1,2 +1,13 @@
-# contact_book
-A simple contact book web application built using Python and Flask. Features include adding, updating, deleting, and searching contacts. Designed with HTML, CSS, and Jinja2 templates.
+# Contact Book Flask App
+
+A simple web app built with Python and Flask to add, update, delete, and search contacts.
+
+## Features
+- Add new contacts
+- Update existing contacts
+- Delete contacts
+- Search contacts
+
+## How to run locally
+
+1. Clone this repo:
